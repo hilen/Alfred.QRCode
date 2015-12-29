@@ -153,7 +153,14 @@ python ./qr_code.py {query}</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Install Python library:
+	1.Install image library pillow by : sudo pip install pillow
+	2.Install python-qrcode by : sudo easy_install qrcode
+
+
+Usage:
+	1.Type qr text;
+	2.Define a hotkey, select some text, press the hotkey</string>
 	<key>uidata</key>
 	<dict>
 		<key>24BC098C-FDEB-4620-B336-50A8C6A944FE</key>
