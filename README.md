@@ -12,12 +12,13 @@ A QRcode generator based on [python-qrcode](https://github.com/lincolnloop/pytho
 ##Usage:
 1. Type `qr text`;
 2. Define a hotkey, select some text, press the hotkey;
+3. Type `qrfolder` to open the QR code image folder. The image's name is created by your time and content's md5 value.
 
 ##Output:
 1. The QRCode image your generate will be open with Preview application.
 ![demo](./demo.png)
-2. You can find the recently QRCode image path by this command in ternimal:
-```
-echo $TMPDIR'alfred_qr_image.png'
-```
+
+##Todo:
+- Create a txt file to collect the QR code content.
+- Hotkey to open the txt file.
 

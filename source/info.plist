@@ -30,6 +30,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>72BEA7C5-CF4F-4FDD-BD50-AE8AF221E993</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EE32C0F-DA76-44EF-81A0-4D3645A3AF4F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>FDAFAA84-04B8-4509-B8F2-A532439C08C2</key>
 		<array>
 			<dict>
@@ -88,13 +99,12 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>'''
-QRCode v1.0
+QRCode v1.2
 
 Github: https://github.com/hilen/Alfred.QRCode
 Author: Hilen
 '''
-
-python ./qr_code.py {query}</string>
+python ./qr_code.py "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -151,6 +161,62 @@ python ./qr_code.py {query}</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>'''
+QRCode v1.2
+
+Github: https://github.com/hilen/Alfred.QRCode
+Author: Hilen
+'''
+
+#!/bin/sh
+qrcode_folder="${TMPDIR}alfred_qr_code"
+echo $qrcode_folder
+if [ ! -d ${qrcode_folder} ]; then
+    mkdir ${qrcode_folder}
+fi
+
+cmd="open $qrcode_folder"
+eval $cmd
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2EE32C0F-DA76-44EF-81A0-4D3645A3AF4F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>qrfolder</string>
+				<key>subtext</key>
+				<string>Select to open it now.</string>
+				<key>text</key>
+				<string>Open QR code folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>72BEA7C5-CF4F-4FDD-BD50-AE8AF221E993</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Install Python library:
@@ -159,14 +225,20 @@ python ./qr_code.py {query}</string>
 
 
 Usage:
-	1.Type qr text;
-	2.Define a hotkey, select some text, press the hotkey</string>
+	1.Type “qr text”;
+	2.Define a hotkey, select some text, press the hotkey
+	3.Type “qrfolder” to open the QR code image folder.</string>
 	<key>uidata</key>
 	<dict>
 		<key>24BC098C-FDEB-4620-B336-50A8C6A944FE</key>
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
+		</dict>
+		<key>2EE32C0F-DA76-44EF-81A0-4D3645A3AF4F</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
 		</dict>
 		<key>5B62777C-3A5C-4C54-9A04-B18D74466990</key>
 		<dict>
@@ -178,10 +250,15 @@ Usage:
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>72BEA7C5-CF4F-4FDD-BD50-AE8AF221E993</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
 		<key>FDAFAA84-04B8-4509-B8F2-A532439C08C2</key>
 		<dict>
 			<key>ypos</key>
-			<real>270</real>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
