@@ -7,7 +7,7 @@ A QRcode generator based on [python-qrcode](https://github.com/lincolnloop/pytho
 
 ##Install Python library:
 1. Install image library [pillow](https://pypi.python.org/pypi/Pillow) by : `sudo pip install pillow`
-2. Install [python-qrcode](https://github.com/lincolnloop/python-qrcode) by : `sudo easy_install python-qrcode`
+2. Install [python-qrcode](https://github.com/lincolnloop/python-qrcode) by : `sudo easy_install qrcode`
 
 ##Usage:
 1. Type `qr text`;
